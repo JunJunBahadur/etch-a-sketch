@@ -1,0 +1,39 @@
+:root {
+    --rows: 4;
+    --columns: 4;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.mainboard {
+    height: 800px;
+    aspect-ratio: 1 / 1;
+}
+
+.board {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+.tiles {
+    border: 1px solid black;
+}
+
+.hovered {
+    background-color: black;
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

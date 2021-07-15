@@ -6,10 +6,33 @@
 </header>
 
 <body>
-    <button type="button" class="newPage">New</button>
-    <button type="button" class="clearPage">Clear</button>
-    <div class="mainboard" draggable="false">
-        <div class="board" draggable="false"></div>
+    <div class="topBar">
+        <div class="title">
+            Etch-A-Sketch!
+        </div>
+        <div class="buttonRow">
+            <button type="button" class="newPage topButtons">New</button>
+            <button type="button" class="clearPage topButtons">Clear</button>
+        </div>
+    </div>
+    <div class="bottomPannels">
+        <div class="boxColoring">
+            <div class="boxColoringStruct">
+                <div class="palette"></div>
+                <div class="black"></div>
+                <div class="blue"></div>
+                <div class="red"></div>
+                <div class="yellow"></div>
+                <div class="green"></div>
+                <div class="eraser"></div>
+            </div>
+        </div>
+
+        <div class="mainboard" draggable="false">
+            <div class="board" draggable="false"></div>
+        </div>
+
+        <div class="extra"></div>
     </div>
 </body>
 <footer>

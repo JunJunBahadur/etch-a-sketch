@@ -4,8 +4,11 @@ const board = document.querySelector(".board");
 createDivs(16);
 allocateDivs();
 
-const clear = document.querySelector(".clear");
-clear.addEventListener('click', clearBoard);
+const newPage = document.querySelector(".newPage");
+newPage.addEventListener('click', newBoard);
+
+const clearPage = document.querySelector(".clearPage");
+clearPage.addEventListener('click', clearBoard);
 
 let mouseIsDown = false;
 document.addEventListener('mousedown', function () {
@@ -20,10 +23,10 @@ function clearBoard() {
     tiles.forEach(tile => {
         tile.classList.remove("hovered");
     });
-    newBoard();
 }
 
 function newBoard() {
+    clearBoard();
     let col = prompt("Enter the number of square columns:");
     let row = prompt("Enter the number of square rows:");
     createDivs(col * row);
@@ -36,6 +39,11 @@ function createDivs(noOfDivs) {
     if (noOfDivs > oldNoOfDivs) {
         newNoOfDivs = noOfDivs - oldNoOfDivs;
     } else if (noOfDivs < oldNoOfDivs) {
+        const tilesDel = document.querySelectorAll(".tiles");
+        while (i < (oldNoOfDivs - noOfDivs)) {
+            tilesDel[i].remove();
+            i++;
+        }
         newNoOfDivs = oldNoOfDivs - noOfDivs;
     } else {
         newNoOfDivs = noOfDivs;

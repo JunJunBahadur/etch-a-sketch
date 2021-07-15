@@ -7,19 +7,27 @@ createDivs(16);
 allocateDivs();
 
 const colorSelect = document.querySelector("#colorPalette");
-colorSelect.addEventListener('change', function() {
+colorSelect.addEventListener('change', function () {
     current.style['background-color'] = colorSelect.value;
     tileColor = colorSelect.value;
 });
 
 
 const colorsSelect = document.querySelectorAll(".Color");
-colorsSelect.forEach(colorSelect => colorSelect.addEventListener('click', function() {
+colorsSelect.forEach(colorSelect => colorSelect.addEventListener('click', function () {
     current.style['background-color'] = colorSelect.style['background-color'];
     tileColor = colorSelect.style['background-color'];
-})
-);
+}));
 
+const infoPannel = document.querySelector(".info");
+const info = document.querySelector(".infoPannel");
+
+infoPannel.addEventListener('mouseenter', function () {
+    info.style['visibility'] = "visible";
+});
+infoPannel.addEventListener('mouseout', function () {
+    info.style['visibility'] = "hidden";
+});
 
 const newPage = document.querySelector(".newPage");
 newPage.addEventListener('click', newBoard);
@@ -44,8 +52,8 @@ function clearBoard() {
 
 function newBoard() {
     clearBoard();
-    let col = prompt("Enter the number of square columns:");
-    let row = prompt("Enter the number of square rows:");
+    let col = prompt("Enter the number of square columns: (not more than 40)");
+    let row = prompt("Enter the number of square rows: (not more than 40)");
     createDivs(col * row);
     r.style.setProperty('--columns', col);
     r.style.setProperty('--rows', row);

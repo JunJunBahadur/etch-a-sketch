@@ -10,6 +10,16 @@ body {
     margin: 0;
     background-color: #560BAD;
 }
+.infoPannel {
+    visibility: hidden;
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    border: 2px solid #F72585;
+    top: 84px;
+    right: 0px;
+    background-color: #7209B7;
+}
 
 .topBar {
     height: 80px;
@@ -33,7 +43,7 @@ body {
 }
 .buttonRow {
     display: flex;
-    width: 300px;
+    width: 550px;
     justify-content: space-evenly;
 }
 
@@ -128,7 +138,11 @@ p {
     font-size: 26px;
     color: #F72585;
 }
-
+li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26px;
+    color: #F72585;
+}
 .curColor {
     width: 40px;
     height: 40px;

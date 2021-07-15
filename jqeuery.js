@@ -1,20 +1,24 @@
 let oldNoOfDivs = 16;
 let tileColor = "#000000";
 var r = document.querySelector(':root');
+const current = document.querySelector(".curColor");
 const board = document.querySelector(".board");
 createDivs(16);
 allocateDivs();
 
 const colorSelect = document.querySelector("#colorPalette");
 colorSelect.addEventListener('change', function() {
-    const current = document.querySelector(".curColor");
     current.style['background-color'] = colorSelect.value;
     tileColor = colorSelect.value;
 });
 
 
-const black = document.querySelector(".black");
-black
+const colorsSelect = document.querySelectorAll(".Color");
+colorsSelect.forEach(colorSelect => colorSelect.addEventListener('click', function() {
+    current.style['background-color'] = colorSelect.style['background-color'];
+    tileColor = colorSelect.style['background-color'];
+})
+);
 
 
 const newPage = document.querySelector(".newPage");
@@ -34,7 +38,7 @@ document.addEventListener('mouseup', function () {
 function clearBoard() {
     let tiles = document.querySelectorAll(".tiles");
     tiles.forEach(tile => {
-        tile.style.backGroundColor = "white";
+        tile.style['background-color'] = "white";
     });
 }
 

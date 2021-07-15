@@ -1,8 +1,21 @@
 let oldNoOfDivs = 16;
+let tileColor = "#000000";
 var r = document.querySelector(':root');
 const board = document.querySelector(".board");
 createDivs(16);
 allocateDivs();
+
+const colorSelect = document.querySelector("#colorPalette");
+colorSelect.addEventListener('change', function() {
+    const current = document.querySelector(".curColor");
+    current.style['background-color'] = colorSelect.value;
+    tileColor = colorSelect.value;
+});
+
+
+const black = document.querySelector(".black");
+black
+
 
 const newPage = document.querySelector(".newPage");
 newPage.addEventListener('click', newBoard);
@@ -21,7 +34,7 @@ document.addEventListener('mouseup', function () {
 function clearBoard() {
     let tiles = document.querySelectorAll(".tiles");
     tiles.forEach(tile => {
-        tile.classList.remove("hovered");
+        tile.style.backGroundColor = "white";
     });
 }
 
@@ -64,10 +77,10 @@ function allocateDivs() {
 
     tiles.forEach(tile => tile.addEventListener('mouseenter', function (e) {
         if (mouseIsDown) {
-            e.target.classList.add("hovered");
+            e.target.style['background-color'] = tileColor;
         }
     }));
     tiles.forEach(tile => tile.addEventListener('mousedown', function (e) {
-        e.target.classList.add("hovered");
+        e.target.style['background-color'] = tileColor;
     }));
 }

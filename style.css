@@ -134,7 +134,7 @@ body {
 }
 
 p {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     font-size: 26px;
     color: #F72585;
 }

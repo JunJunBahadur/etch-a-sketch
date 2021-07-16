@@ -90,7 +90,7 @@ body {
 .palette {
     grid-column: 2/3;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -154,7 +154,7 @@ li {
 .currentColor {
     grid-column: 2/3;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
